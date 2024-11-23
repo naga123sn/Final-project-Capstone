@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Payment Details</title>
+</head>
+<body>
+    <h1>Payment Details</h1>
+
+    <form action="/user/verifyOtp" method="post">
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" id="phoneNumber" name="phoneNumber" required><br><br>
+
+        <label for="amount">Amount:</label>
+        <input type="text" id="amount" name="amount" value="[[${amount}]]" readonly><br><br>
+
+        <button type="submit">Generate OTP</button>
+    </form>
+</body>
+</html>

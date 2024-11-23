@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        /* General body styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* Header styles */
+        h1 {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            font-size: 2.5em;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Main container for the dashboard */
+        .dashboard-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        /* Navigation menu styles */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        ul li {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            font-size: 18px;
+            color: #fff;
+            background-color: #4CAF50;
+            padding: 15px;
+            border-radius: 8px;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        ul li a:hover {
+            background-color: #45a049;
+            transform: scale(1.05); /* Slight zoom effect */
+        }
+
+        /* Footer styles */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #888;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            ul li a {
+                font-size: 16px;
+                padding: 12px;
+            }
+
+            footer {
+                font-size: 12px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <h1>Welcome, Admin</h1>
+
+    <!-- Main Dashboard Container -->
+    <div class="dashboard-container">
+        <ul>
+            <li><a href="/admin/addBus">Add Bus</a></li>
+            <li><a href="/admin/buses">Manage Bus</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Admin Dashboard &copy; 2024. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+</body>
+</html>

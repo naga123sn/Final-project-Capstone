@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Bus</title>
+    <style>
+        /* General body styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9; /* Light gray background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        /* Form container */
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            max-width: 600px;
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Heading style */
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        /* Label and Input styles */
+        label {
+            font-size: 16px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        /* Submit button style */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Back link style */
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 16px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Add a New Bus</h1>
+        <form action="/admin/addBus" method="post">
+            <label for="busName">Bus Name:</label>
+            <input type="text" id="busName" name="busName" required>
+
+            <label for="busNumber">Bus Number:</label>
+            <input type="text" id="busNumber" name="busNumber" required>
+
+            <label for="fromLocation">From Location:</label>
+            <input type="text" id="fromLocation" name="fromLocation" required>
+
+            <label for="toLocation">To Location:</label>
+            <input type="text" id="toLocation" name="toLocation" required>
+
+            <label for="timing">Timing:</label>
+            <input type="text" id="timing" name="timing" required>
+
+            <label for="seatsAvailable">Total Seats Available:</label>
+            <input type="number" id="seatsAvailable" name="seatsAvailable" required>
+
+            <button type="submit">Add Bus</button>
+        </form>
+        <a href="/admin/dashboard">Back to Admin Dashboard</a>
+    </div>
+
+</body>
+</html>

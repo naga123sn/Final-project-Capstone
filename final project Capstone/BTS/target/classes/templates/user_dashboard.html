@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <style>
+        /* General body styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        /* Header styling */
+        h1 {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+
+        /* Main container for the dashboard */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Search form styles */
+        form {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        form label {
+            font-size: 16px;
+            margin-right: 10px;
+            color: #333;
+        }
+
+        form input {
+            padding: 10px;
+            margin: 5px 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            width: 200px;
+        }
+
+        form button {
+            padding: 12px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
+
+        /* Table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th, table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Table action links */
+        table td a {
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        table td a:hover {
+            color: #45a049;
+        }
+
+        /* Responsive styling for smaller screens */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            form input,
+            form button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            table th, table td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <h1>Welcome, <span th:text="${username}"></span></h1>
+
+    <!-- Main Dashboard Container -->
+    <div class="container">
+        <!-- Search Form -->
+        <form th:action="@{/user/searchBus}" method="get">
+            <label for="fromLocation">From Location:</label>
+            <input type="text" id="fromLocation" name="fromLocation" required>
+
+            <label for="toLocation">To Location:</label>
+            <input type="text" id="toLocation" name="toLocation" required>
+
+            <button type="submit">Search</button>
+        </form>
+
+        <!-- Display Search Results -->
+        <div th:if="${buses}">
+            <h2>Available Buses</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Bus Name</th>
+                        <th>Bus Number</th>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Timing</th>
+                        <th>Seats Available</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="bus : ${buses}">
+                        <td th:text="${bus.busName}"></td>
+                        <td th:text="${bus.busNumber}"></td>
+                        <td th:text="${bus.fromLocation}"></td>
+                        <td th:text="${bus.toLocation}"></td>
+                        <td th:text="${bus.timing}"></td>
+                        <td th:text="${bus.seatsAvailable}"></td>
+                        <td>
+                            <a th:href="@{/user/confirmBus/{id}(id=${bus.id})}">Confirm</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

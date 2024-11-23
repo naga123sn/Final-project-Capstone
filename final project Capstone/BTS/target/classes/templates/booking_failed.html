@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Booking Failed</title>
+    <style>
+        /* General body styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8d7da; /* Light red background to indicate error */
+            color: #721c24; /* Dark red text for error message */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        /* Container for the message */
+        .container {
+            background-color: #fff;
+            border: 1px solid #f5c6cb;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header style */
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* Error message style */
+        p {
+            font-size: 16px;
+            margin-bottom: 30px;
+            color: #721c24;
+        }
+
+        /* Button styling */
+        button {
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #c9302c;
+        }
+
+        /* Button to go back to bus details */
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Booking Failed!</h1>
+        <p th:text="${message}"></p>
+
+        <!-- Button to go back to the bus details page -->
+        <a th:href="@{/user/confirmBus/{id}(id=${bus.id})}">
+            <button>Back to Bus Details</button>
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Bus</title>
+    <style>
+        /* General body styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Header styles */
+        h1 {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            font-size: 2.5em;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Form container styles */
+        .form-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Form labels and inputs */
+        label {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        input[type="text"]:focus, input[type="number"]:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        /* Submit button styles */
+        button {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 18px;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Form section styles */
+        .form-section {
+            margin-bottom: 20px;
+        }
+
+        /* Link back to the previous page */
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #4CAF50;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <h1>Edit Bus</h1>
+
+    <!-- Form Section -->
+    <div class="form-container">
+        <form action="#" th:action="@{/admin/updateBus/{id}(id=${bus.id})}" method="post">
+            <div class="form-section">
+                <label for="busName">Bus Name</label>
+                <input type="text" id="busName" name="busName" th:value="${bus.busName}" required>
+            </div>
+
+            <div class="form-section">
+                <label for="busNumber">Bus Number</label>
+                <input type="text" id="busNumber" name="busNumber" th:value="${bus.busNumber}" required>
+            </div>
+
+            <div class="form-section">
+                <label for="fromLocation">From Location</label>
+                <input type="text" id="fromLocation" name="fromLocation" th:value="${bus.fromLocation}" required>
+            </div>
+
+            <div class="form-section">
+                <label for="toLocation">To Location</label>
+                <input type="text" id="toLocation" name="toLocation" th:value="${bus.toLocation}" required>
+            </div>
+
+            <div class="form-section">
+                <label for="seatsAvailable">Seats Available</label>
+                <input type="number" id="seatsAvailable" name="seatsAvailable" th:value="${bus.seatsAvailable}" required>
+            </div>
+
+            <div class="form-section">
+                <label for="timing">Timing</label>
+                <input type="text" id="timing" name="timing" th:value="${bus.timing}" required>
+            </div>
+
+            <button type="submit">Update Bus</button>
+        </form>
+        
+        <a href="/admin/buses">Back to Manage Buses</a>
+    </div>
+
+</body>
+</html>

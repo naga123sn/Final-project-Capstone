@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Bus Booking System</title>
+    <style>
+        /* Basic styles for the body with background image */
+        body {
+            font-family:Times New Roman;
+            margin: 0;
+            padding: 0;
+            background: url('templates/images/background.jpg') no-repeat center center fixed;
+            background-size: cover; /* Make sure the background image covers the entire screen */
+            color: white; /* Text color to ensure readability on dark background */
+        }
+
+        /* Navigation bar styles */
+        nav {
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Header styles */
+        header {
+            background-color: rgba(76, 175, 80, 0.7); /* Semi-transparent green background */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Content section styles */
+        .content {
+            margin: 20px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for content */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Links styles */
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 10px 0;
+        }
+
+        ul li a {
+            color: #333;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        ul li a:hover {
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to Online Bus Booking System</h1>
+    </header>
+
+    <!-- Content Section -->
+    <div class="content">
+        <h2>Please choose your role to log in:</h2>
+        <ul>
+            <li><a href="/login?role=admin">Admin Login</a></li>
+            <li><a href="/login?role=user">User Login</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>
